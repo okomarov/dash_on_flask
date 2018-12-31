@@ -1,0 +1,6 @@
+Flask==1.0.2
+gunicorn==19.9.0
+dash==0.35.0
+dash-core-components==0.42.0
+dash-html-components==0.13.4
+pandas-datareader==0.7.0 

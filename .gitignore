@@ -1,0 +1,8 @@
+# Cache
+__pycache__
+
+# OS
+.DS_Store
+
+# IDE
+.vscode
