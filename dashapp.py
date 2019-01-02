@@ -23,7 +23,7 @@ dashapp.layout = html.Div([
         value='COKE'
     ),
     dcc.Graph(id='my-graph')
-])
+], style={'width': '500'})
 
 
 @dashapp.callback(Output('my-graph', 'figure'), [Input('my-dropdown', 'value')])
@@ -33,5 +33,6 @@ def update_graph(selected_dropdown_value):
         'data': [{
             'x': df.index,
             'y': df.Close
-        }]
+        }],
+        'layout': {'margin': {'l': 40, 'r': 0, 't': 20, 'b': 30}}
     }
