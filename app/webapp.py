@@ -14,15 +14,15 @@ from app.forms import LoginForm
 from app.forms import RegistrationForm
 from app.models import User
 
-app_bp = Blueprint('main', __name__)
+server_bp = Blueprint('main', __name__)
 
 
-@app_bp.route('/')
+@server_bp.route('/')
 def index():
     return render_template("index.html", title='Home Page')
 
 
-@app_bp.route('/login', methods=['GET', 'POST'])
+@server_bp.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('main.index'))
@@ -43,7 +43,7 @@ def login():
     return render_template('login.html', title='Sign In', form=form)
 
 
-@app_bp.route('/logout')
+@server_bp.route('/logout')
 @login_required
 def logout():
     logout_user()
@@ -51,7 +51,7 @@ def logout():
     return redirect(url_for('main.index'))
 
 
-@app_bp.route('/register', methods=['GET', 'POST'])
+@server_bp.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('main.index'))

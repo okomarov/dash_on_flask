@@ -9,7 +9,7 @@ from dash.dependencies import Output
 from app import create_app
 
 
-app, dashapp = create_app()
+server, dashapp = create_app()
 
 dashapp.layout = html.Div([
     html.H1('Stock Tickers'),

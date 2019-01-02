@@ -6,33 +6,33 @@ from config import BaseConfig
 
 
 def create_app():
-    app = Flask(__name__)
-    app.config.from_object(BaseConfig)
-    dashapp = dash.Dash(__name__, server=app, url_base_pathname='/dashboard/')
+    server = Flask(__name__)
+    server.config.from_object(BaseConfig)
+    dashapp = dash.Dash(__name__, server=server, url_base_pathname='/dashboard/')
 
-    register_extensions(app)
-    register_blueprints(app)
+    register_extensions(server)
+    register_blueprints(server)
 
     protect_dashviews(dashapp)
 
-    return app, dashapp
+    return server, dashapp
 
 
-def register_extensions(app):
+def register_extensions(server):
     from app.extensions import db
     from app.extensions import login
     from app.extensions import migrate
 
-    db.init_app(app)
-    login.init_app(app)
+    db.init_app(server)
+    login.init_app(server)
     login.login_view = 'main.login'
-    migrate.init_app(app, db)
+    migrate.init_app(server, db)
 
 
-def register_blueprints(app):
-    from app.dashapp import app_bp
+def register_blueprints(server):
+    from app.webapp import server_bp
 
-    app.register_blueprint(app_bp)
+    server.register_blueprint(server_bp)
 
 
 def protect_dashviews(dashapp):
