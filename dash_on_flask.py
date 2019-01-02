@@ -1,14 +1,15 @@
 from datetime import datetime as dt
 
-from dash.dependencies import Input, Output
 import dash_core_components as dcc
 import dash_html_components as html
 import pandas_datareader as pdr
+from dash.dependencies import Input
+from dash.dependencies import Output
 
 from app import create_app
 
-app, dashapp = create_app()
 
+app, dashapp = create_app()
 
 dashapp.layout = html.Div([
     html.H1('Stock Tickers'),
@@ -34,4 +35,3 @@ def update_graph(selected_dropdown_value):
             'y': df.Close
         }]
     }
-

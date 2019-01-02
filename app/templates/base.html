@@ -1,0 +1,12 @@
+<div>
+  Test:
+  <a href="{{ url_for('main.index') }}">Home</a>
+  {% if current_user.is_anonymous %}
+  <a href="{{ url_for('main.login') }}">Login</a>
+  {% else %}
+  <a href="{{ url_for('main.logout') }}">Logout</a>
+  {% endif %}
+
+  {% block content %}
+  {% endblock %}
+</div>

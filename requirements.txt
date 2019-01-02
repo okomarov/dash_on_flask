@@ -4,3 +4,7 @@ dash==0.35.0
 dash-core-components==0.42.0
 dash-html-components==0.13.4
 pandas-datareader==0.7.0 
+flask-sqlalchemy==2.3.2
+flask-migrate==2.3.1
+flask-login==0.4.1
+flask-wtf==0.14.2

@@ -9,3 +9,6 @@ __pycache__
 
 # Settings
 .envrc
+
+# DB
+app.db
