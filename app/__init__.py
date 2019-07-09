@@ -30,9 +30,11 @@ def register_dashapps(app):
                          assets_folder=get_root_path(__name__) + '/dashboard/assets/',
                          meta_tags=[meta_viewport])
 
-    dashapp1.title = 'Dashapp 1'
-    dashapp1.layout = layout
-    register_callbacks(dashapp1)
+    with app.app_context():
+        dashapp1.title = 'Dashapp 1'
+        dashapp1.layout = layout
+        register_callbacks(dashapp1)
+
     _protect_dashviews(dashapp1)
 
 
