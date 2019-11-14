@@ -1,0 +1,37 @@
+{
+    "name": "Dashapp on Flask",
+    "description": "Embed your own Dash app into Flask and leverage its authentication layer.",
+    "keywords": [
+      "Flask",
+      "Dash",
+      "Plotly"
+    ],
+    "repository": "https://github.com/okomarov/dash_on_flask",
+    "success_url": "/",
+    "env": {
+      "SECRET_KEY": {
+        "description": "A secret key for verifying the integrity of signed cookies.",
+        "generator": "secret"
+      },
+      "FLASK_APP": {
+        "description": "Name of entrypoint app file in the root directory.",
+        "value": "dashapp"
+      }
+    },
+    "formation": {
+      "web": {
+        "quantity": 1,
+        "size": "free"
+      }
+    },
+    "addons": [
+        {
+            "plan": "heroku-postgresql:hobby-dev"
+        }
+    ],
+    "buildpacks": [
+      {
+        "url": "heroku/python"
+      }
+    ]
+  }
