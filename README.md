@@ -6,7 +6,7 @@ For details and how to use, please read: [How to embed a Dash app into an existi
 ## Deploy on Heroku (free)
 First, edit the app.json and replace the value of the `repository`:
 ```
-"repository": "https://github.com/okomarov/dash_on_flask"
+"repository": "https://github.com/hungle00/dash_on_flask.git"
 ```
 with the URL to the forked repository.
 
