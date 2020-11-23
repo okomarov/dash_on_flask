@@ -1,4 +1,4 @@
-a{
+{
     "name": "Dashapp on Flask",
     "description": "Embed your own Dash app into Flask and leverage its authentication layer.",
     "keywords": [
