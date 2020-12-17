@@ -8,7 +8,8 @@ layout = html.Div([
         options=[
             {'label': 'Coke', 'value': 'COKE'},
             {'label': 'Tesla', 'value': 'TSLA'},
-            {'label': 'Apple', 'value': 'AAPL'}
+            {'label': 'Apple', 'value': 'AAPL'},
+            {'label': 'UnitedHealth Group', 'value': 'UNH'},
         ],
         value='COKE'
     ),
