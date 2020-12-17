@@ -6,7 +6,7 @@
       "Dash",
       "Plotly"
     ],
-    "repository": "https://github.com/okomarov/dash_on_flask",
+    "repository": "https://github.com/atmollohan/dash_on_flask",
     "success_url": "/",
     "env": {
       "SECRET_KEY": {
