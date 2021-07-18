@@ -22,7 +22,9 @@ def register_dashapps(app):
     from app.dashapp1.callbacks import register_callbacks
 
     # Meta tags for viewport responsiveness
-    meta_viewport = {"name": "viewport", "content": "width=device-width, initial-scale=1, shrink-to-fit=no"}
+    meta_viewport = {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1, shrink-to-fit=no"}
 
     dashapp1 = dash.Dash(__name__,
                          server=app,
@@ -41,7 +43,8 @@ def register_dashapps(app):
 def _protect_dashviews(dashapp):
     for view_func in dashapp.server.view_functions:
         if view_func.startswith(dashapp.config.url_base_pathname):
-            dashapp.server.view_functions[view_func] = login_required(dashapp.server.view_functions[view_func])
+            dashapp.server.view_functions[view_func] = login_required(
+                dashapp.server.view_functions[view_func])
 
 
 def register_extensions(server):
